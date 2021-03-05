@@ -3,14 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "http-zero-test": {
+    "angular10project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "",
@@ -20,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/http-zero-test",
+            "outputPath": "dist/angular10project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -46,6 +43,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -53,13 +51,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -68,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "http-zero-test:build"
+            "browserTarget": "angular10project:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "http-zero-test:build:production"
+              "browserTarget": "angular10project:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "http-zero-test:build"
+            "browserTarget": "angular10project:build"
           }
         },
         "test": {
@@ -116,16 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "http-zero-test:serve"
+            "devServerTarget": "angular10project:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "http-zero-test:serve:production"
+              "devServerTarget": "angular10project:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "http-zero-test"
+    }},
+  "defaultProject": "angular10project"
 }
