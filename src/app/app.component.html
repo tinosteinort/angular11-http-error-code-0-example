@@ -1,0 +1,12 @@
+<p>
+    If you use this link, all is fine:
+    <a [routerLink]="['restricted']">Go to restricted (will redirect to google)</a>
+</p>
+<hr/>
+<p>
+    If you enter <a href="http://localhost:4200/restricted">http://localhost:4200/restricted</a> directly
+     in the address bar, you will see an error in the javascript
+     console.
+</p>
+
+<router-outlet></router-outlet>
